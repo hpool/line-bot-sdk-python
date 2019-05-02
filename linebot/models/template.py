@@ -229,7 +229,7 @@ class CarouselColumn(Base):
     """
 
     def __init__(self, text=None, title=None, thumbnail_image_url=None,
-                 image_background_color=None, actions=None, **kwargs):
+                 image_background_color=None, actions=None, default_action=None, **kwargs):
         """__init__ method.
 
         :param str text: Message text.
@@ -257,6 +257,7 @@ class CarouselColumn(Base):
         self.thumbnail_image_url = thumbnail_image_url
         self.image_background_color = image_background_color
         self.actions = get_actions(actions)
+        self.default_action = get_action(default_action)
 
 
 class ImageCarouselColumn(Base):
